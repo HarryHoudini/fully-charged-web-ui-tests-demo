@@ -4,16 +4,10 @@ import com.automician.workshops.configs.BaseTest;
 import com.automician.workshops.pages.DataStorages;
 import com.automician.workshops.pages.Home;
 import com.automician.workshops.pages.Product;
-import com.automician.workshops.pages.TestTables;
 import com.automician.workshops.widgets.*;
-import com.automician.workshops.widgets.paradigmshift.Form;
-import com.automician.workshops.widgets.paradigmshift.InputValue;
-import com.automician.workshops.widgets.paradigmshift.SelectValue;
-import com.codeborne.selenide.Configuration;
 import org.junit.Test;
 
 import static com.automician.worshops.core.Gherkin.*;
-import static com.codeborne.selenide.Selenide.*;
 import static java.util.Arrays.asList;
 
 public class GribleTest extends BaseTest{
@@ -264,5 +258,21 @@ public class GribleTest {
 //                asList("1", "true"),
 //                asList("2", "false")
 //        );
+    }
+
+    @Test
+    public void createProduct() {
+        GIVEN("At Home page");
+        Home home = new Home();
+        home.open();
+
+        String productName = "Product " + System.currentTimeMillis();
+
+        WHEN("New product created");
+        home.addProduct(productName);
+
+        EXPECT("New product is shown in list and can be chosen");
+        home.openProduct(productName);
+        home.shouldHaveCurrenProduct(productName);
     }
 }

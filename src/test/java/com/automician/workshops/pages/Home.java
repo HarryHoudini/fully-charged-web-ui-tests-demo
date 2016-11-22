@@ -92,4 +92,9 @@ public class Home {
         return new Product(Integer.valueOf(productId));
          */
     }
+
+    @Step
+    public void shouldHaveCurrenProduct(String productName) {
+        $("#product-name").shouldBe(exactText(productName));
+    }
 }
