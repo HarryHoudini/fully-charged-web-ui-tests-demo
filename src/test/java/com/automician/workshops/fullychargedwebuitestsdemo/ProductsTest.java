@@ -1,13 +1,16 @@
 package com.automician.workshops.fullychargedwebuitestsdemo;
 
+import com.automician.workshops.fullychargedwebuitestsdemo.categories.Atomic;
 import com.automician.workshops.fullychargedwebuitestsdemo.configs.BaseTest;
 import com.automician.workshops.fullychargedwebuitestsdemo.pages.Products;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import static com.automician.worshops.core.Gherkin.EXPECT;
 import static com.automician.worshops.core.Gherkin.GIVEN;
 import static com.automician.worshops.core.Gherkin.WHEN;
 
+@Category(Atomic.class)
 public class ProductsTest extends BaseTest {
 
     @Test

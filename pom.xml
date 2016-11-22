@@ -11,6 +11,8 @@
     <properties>
         <allure.version>1.4.23.HOTFIX1</allure.version>
         <aspectj.version>1.8.9</aspectj.version>
+        <test.includeCategories></test.includeCategories>
+        <test.excludeCategories></test.excludeCategories>
     </properties>
 
     <dependencies>
@@ -50,6 +52,8 @@
                             <value>ru.yandex.qatools.allure.junit.AllureRunListener</value>
                         </property>
                     </properties>
+                    <groups>${test.includeCategories}</groups>
+                    <excludedGroups>${test.excludeCategories}</excludedGroups>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -117,6 +121,62 @@
                     </resource>
                 </resources>
             </build>
+        </profile>
+
+        <profile>
+            <id>dev.atomic</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/dev</directory>
+                    </resource>
+                </resources>
+            </build>
+            <properties>
+                <test.includeCategories>com.automician.workshops.fullychargedwebuitestsdemo.categories.Atomic</test.includeCategories>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>test.atomic</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/test</directory>
+                    </resource>
+                </resources>
+            </build>
+            <properties>
+                <test.includeCategories>com.automician.workshops.fullychargedwebuitestsdemo.categories.Atomic</test.includeCategories>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>dev.integration</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/dev</directory>
+                    </resource>
+                </resources>
+            </build>
+            <properties>
+                <test.includeCategories>com.automician.workshops.fullychargedwebuitestsdemo.categories.Integration</test.includeCategories>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>test.integration</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/test</directory>
+                    </resource>
+                </resources>
+            </build>
+            <properties>
+                <test.includeCategories>com.automician.workshops.fullychargedwebuitestsdemo.categories.Integration</test.includeCategories>
+            </properties>
         </profile>
 
     </profiles>

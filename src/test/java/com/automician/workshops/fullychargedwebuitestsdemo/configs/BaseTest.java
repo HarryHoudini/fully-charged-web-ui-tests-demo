@@ -25,6 +25,7 @@ public class BaseTest {
         Configuration.baseUrl = properties.getProperty("app.url");
         Configuration.timeout = Long.valueOf(properties.getProperty("test.timeout"));
         Configuration.browser = properties.getProperty("test.browser");
+
     }
 
     @After

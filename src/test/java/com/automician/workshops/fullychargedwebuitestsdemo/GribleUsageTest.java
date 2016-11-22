@@ -1,15 +1,18 @@
 package com.automician.workshops.fullychargedwebuitestsdemo;
 
+import com.automician.workshops.fullychargedwebuitestsdemo.categories.Integration;
 import com.automician.workshops.fullychargedwebuitestsdemo.configs.BaseTest;
 import com.automician.workshops.fullychargedwebuitestsdemo.pages.DataStorages;
 import com.automician.workshops.fullychargedwebuitestsdemo.pages.Products;
 import com.automician.workshops.fullychargedwebuitestsdemo.pages.Product;
 import com.automician.workshops.fullychargedwebuitestsdemo.widgets.Table;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import static com.automician.worshops.core.Gherkin.*;
 import static java.util.Arrays.asList;
 
+@Category(Integration.class)
 public class GribleUsageTest extends BaseTest {
 
     /* + hides common non-test-logic technical details in a parent base class
