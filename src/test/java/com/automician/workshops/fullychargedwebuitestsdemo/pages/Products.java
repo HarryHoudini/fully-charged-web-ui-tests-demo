@@ -8,6 +8,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import ru.yandex.qatools.allure.annotations.Step;
 
+import static com.automician.worshops.core.Helpers.satisfied;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -41,7 +42,7 @@ public class Products {
          * - in long perspective "less efficient", "longer" in implementation
          */
 
-        new ConfirmationDialog().confirm();
+        new ConfirmationDialog().ensureConfirmation();
     }
 
     @Step
@@ -120,14 +121,14 @@ public class Products {
 
     @Step
     public void ensureNoProduct(String productName) {
-        if (getProductElement(productName).is(visible)) {
+        if (satisfied(getProductElement(productName), visible)) {
             deleteProduct(productName);
         }
     }
 
     @Step
     public void ensureProduct(String productName) {
-        if (!getProductElement(productName).is(visible)) {
+        if (!satisfied(getProductElement(productName), visible)) {
             addProduct(productName);
         }
     }

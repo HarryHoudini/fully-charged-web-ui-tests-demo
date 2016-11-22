@@ -10,7 +10,7 @@ import org.junit.Test;
 import static com.automician.worshops.core.Gherkin.*;
 import static java.util.Arrays.asList;
 
-public class GribleUsageTest extends BaseTest{
+public class GribleUsageTest extends BaseTest {
 
     /* + hides common non-test-logic technical details in a parent base class
      * >
@@ -26,10 +26,9 @@ public class GribleTest {
 
     @Test
     public void createsTestTableBasedOnDataStorageForNewProduct() {
-        GIVEN("At Home page: ensure 'Integration product' does not exist");
-        Products products = new Products();
-        products.open();
-        products.ensureNoProduct("Integration product");
+        GIVEN("At Home page");
+        Products home = new Products();
+        home.open();
 
         /* * emulates "BDD's Gherkin"
          * + Keeps all details in Allure Report
@@ -39,7 +38,6 @@ public class GribleTest {
          *   * would be great to enhance Allure Reports
          *     to report at least classes of objects
          *   + though not a bigger spike than "BDD as a tool for reports" ;)
-
          * ~
          app.home().open();
          * * or: `_.home().open()`
@@ -72,7 +70,6 @@ public class GribleTest {
          *     storage.row(0).cell(0).fill("vasya");
          *     storage.row(0).cell(1).fill("qwerty");
          *   and now all "better reporting capabilities" are broken again :(
-
          * >
         Home home = new Home();
         home.open();
@@ -80,16 +77,18 @@ public class GribleTest {
          *    [12:42:49.970] Open (4s 869ms)
          */
 
+        String productName = "Product " + System.currentTimeMillis();
+
         WHEN("New product created");
         /* >
         WHEN("New product created: " + productName);
          */
 
-        products.addProduct("Integration product");
+        home.addProduct(productName);
 
         AND("Its Data Storages opened");
         Product product =
-                products.openProduct("Integration product");
+                home.openProduct(productName);
 
         DataStorages dataStorages =
                 product.openDataStorages();
@@ -120,10 +119,8 @@ public class GribleTest {
          * - needs additional DataStorages#table method in context of implementation
          *   - and then also additional TestTable#table method
          *     with the same "kind of" duplicated implementation
-
          * ~
         Table table = new Table();
-
         table.column(0).setName("user");
         table.addColumnAfter(0, "password");
          * + KISS
