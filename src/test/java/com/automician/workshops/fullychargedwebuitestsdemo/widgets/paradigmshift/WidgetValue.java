@@ -1,4 +1,4 @@
-package com.automician.workshops.widgets.paradigmshift;
+package com.automician.workshops.fullychargedwebuitestsdemo.widgets.paradigmshift;
 
 import com.codeborne.selenide.SelenideElement;
 

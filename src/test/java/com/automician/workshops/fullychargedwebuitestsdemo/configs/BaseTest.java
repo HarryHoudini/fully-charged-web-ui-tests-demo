@@ -1,4 +1,4 @@
-package com.automician.workshops.configs;
+package com.automician.workshops.fullychargedwebuitestsdemo.configs;
 
 import com.automician.worshops.core.Helpers;
 import com.codeborne.selenide.Configuration;

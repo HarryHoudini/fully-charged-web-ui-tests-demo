@@ -13,7 +13,6 @@
         <aspectj.version>1.8.9</aspectj.version>
     </properties>
 
-
     <dependencies>
         <dependency>
             <groupId>com.codeborne</groupId>

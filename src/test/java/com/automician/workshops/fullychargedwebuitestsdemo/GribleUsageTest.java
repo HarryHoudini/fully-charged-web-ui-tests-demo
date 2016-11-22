@@ -1,16 +1,16 @@
-package com.automician.workshops;
+package com.automician.workshops.fullychargedwebuitestsdemo;
 
-import com.automician.workshops.configs.BaseTest;
-import com.automician.workshops.pages.DataStorages;
-import com.automician.workshops.pages.Home;
-import com.automician.workshops.pages.Product;
-import com.automician.workshops.widgets.*;
+import com.automician.workshops.fullychargedwebuitestsdemo.configs.BaseTest;
+import com.automician.workshops.fullychargedwebuitestsdemo.pages.DataStorages;
+import com.automician.workshops.fullychargedwebuitestsdemo.pages.Products;
+import com.automician.workshops.fullychargedwebuitestsdemo.pages.Product;
+import com.automician.workshops.fullychargedwebuitestsdemo.widgets.Table;
 import org.junit.Test;
 
 import static com.automician.worshops.core.Gherkin.*;
 import static java.util.Arrays.asList;
 
-public class GribleTest extends BaseTest{
+public class GribleUsageTest extends BaseTest{
 
     /* + hides common non-test-logic technical details in a parent base class
      * >
@@ -26,9 +26,10 @@ public class GribleTest {
 
     @Test
     public void createsTestTableBasedOnDataStorageForNewProduct() {
-        GIVEN("At Home page");
-        Home home = new Home();
-        home.open();
+        GIVEN("At Home page: ensure 'Integration product' does not exist");
+        Products products = new Products();
+        products.open();
+        products.ensureNoProduct("Integration product");
 
         /* * emulates "BDD's Gherkin"
          * + Keeps all details in Allure Report
@@ -79,18 +80,16 @@ public class GribleTest {
          *    [12:42:49.970] Open (4s 869ms)
          */
 
-        String productName = "Product " + System.currentTimeMillis();
-
         WHEN("New product created");
         /* >
         WHEN("New product created: " + productName);
          */
 
-        home.addProduct(productName);
+        products.addProduct("Integration product");
 
         AND("Its Data Storages opened");
         Product product =
-                home.openProduct(productName);
+                products.openProduct("Integration product");
 
         DataStorages dataStorages =
                 product.openDataStorages();
@@ -260,19 +259,4 @@ public class GribleTest {
 //        );
     }
 
-    @Test
-    public void createProduct() {
-        GIVEN("At Home page");
-        Home home = new Home();
-        home.open();
-
-        String productName = "Product " + System.currentTimeMillis();
-
-        WHEN("New product created");
-        home.addProduct(productName);
-
-        EXPECT("New product is shown in list and can be chosen");
-        home.openProduct(productName);
-        home.shouldHaveCurrentProduct(productName);
-    }
 }

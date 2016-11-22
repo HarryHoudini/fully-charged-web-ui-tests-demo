@@ -1,9 +1,7 @@
-package com.automician.workshops.widgets;
+package com.automician.workshops.fullychargedwebuitestsdemo.widgets;
 
-import com.codeborne.selenide.CollectionCondition;
 import ru.yandex.qatools.allure.annotations.Step;
 
-import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 

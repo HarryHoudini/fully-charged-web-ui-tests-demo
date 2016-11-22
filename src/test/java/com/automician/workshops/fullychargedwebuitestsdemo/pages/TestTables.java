@@ -1,6 +1,6 @@
-package com.automician.workshops.pages;
+package com.automician.workshops.fullychargedwebuitestsdemo.pages;
 
-import com.automician.workshops.widgets.*;
+import com.automician.workshops.fullychargedwebuitestsdemo.widgets.*;
 import ru.yandex.qatools.allure.annotations.Step;
 
 public class TestTables {

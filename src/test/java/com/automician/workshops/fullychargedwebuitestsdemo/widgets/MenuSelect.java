@@ -1,4 +1,4 @@
-package com.automician.workshops.widgets;
+package com.automician.workshops.fullychargedwebuitestsdemo.widgets;
 
 import com.codeborne.selenide.SelenideElement;
 import ru.yandex.qatools.allure.annotations.Step;

@@ -1,10 +1,9 @@
-package com.automician.workshops.pages;
+package com.automician.workshops.fullychargedwebuitestsdemo.pages;
 
-import com.automician.workshops.widgets.Section;
+import com.automician.workshops.fullychargedwebuitestsdemo.widgets.Section;
 import com.codeborne.selenide.Selenide;
 import ru.yandex.qatools.allure.annotations.Step;
 
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class Product {

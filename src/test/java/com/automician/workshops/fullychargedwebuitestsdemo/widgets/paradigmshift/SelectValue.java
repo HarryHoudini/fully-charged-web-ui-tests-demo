@@ -1,7 +1,7 @@
-package com.automician.workshops.widgets.paradigmshift;
+package com.automician.workshops.fullychargedwebuitestsdemo.widgets.paradigmshift;
 
-import com.automician.workshops.widgets.MenuInput;
-import com.automician.workshops.widgets.MenuSelect;
+import com.automician.workshops.fullychargedwebuitestsdemo.widgets.MenuInput;
+import com.automician.workshops.fullychargedwebuitestsdemo.widgets.MenuSelect;
 import com.codeborne.selenide.SelenideElement;
 
 public class SelectValue implements WidgetValue {

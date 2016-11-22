@@ -1,6 +1,6 @@
-package com.automician.workshops.widgets.paradigmshift;
+package com.automician.workshops.fullychargedwebuitestsdemo.widgets.paradigmshift;
 
-import com.automician.workshops.widgets.MenuInput;
+import com.automician.workshops.fullychargedwebuitestsdemo.widgets.MenuInput;
 import com.codeborne.selenide.SelenideElement;
 
 public class InputValue implements WidgetValue{

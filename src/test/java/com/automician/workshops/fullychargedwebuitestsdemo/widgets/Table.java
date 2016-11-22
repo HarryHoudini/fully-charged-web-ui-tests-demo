@@ -1,4 +1,4 @@
-package com.automician.workshops.widgets;
+package com.automician.workshops.fullychargedwebuitestsdemo.widgets;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
