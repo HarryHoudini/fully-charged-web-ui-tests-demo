@@ -273,6 +273,6 @@ public class GribleTest {
 
         EXPECT("New product is shown in list and can be chosen");
         home.openProduct(productName);
-        home.shouldHaveCurrenProduct(productName);
+        home.shouldHaveCurrentProduct(productName);
     }
 }

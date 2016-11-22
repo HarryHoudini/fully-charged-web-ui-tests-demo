@@ -94,7 +94,7 @@ public class Home {
     }
 
     @Step
-    public void shouldHaveCurrenProduct(String productName) {
+    public void shouldHaveCurrentProduct(String productName) {
         $("#product-name").shouldBe(exactText(productName));
     }
 }
